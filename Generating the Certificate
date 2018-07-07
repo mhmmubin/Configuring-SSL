@@ -1,0 +1,24 @@
+1. Run => Open => Type cmd
+
+2. Type cd C:\OpenSSL\bin
+
+3. Type openssl.exe genrsa -des3 -out localhost.key 1024  {choose a password between 4 to 511 char}
+
+4. Type openssl.exe rsa -in localhost.key -out localhost.pem
+
+5. Type openssl.exe req -config openssl.cnf -new -key localhost.key -out localhost.csr 
+
+6. Enter following values:
+
+Passphrase: Your password
+Country Name: Your country
+State: Your State
+Locality: Your Locality
+Organization: Your organisation
+Organizational Unit: Your Unit
+Common Name: <Your Name>
+Email: Your email
+Password: may leave it blank
+Optional Company Name: may leave it blank
+
+7. Type openssl.exe x509 -req -days 365 -in localhost.csr -signkey localhost.key -out localhost.crt 
