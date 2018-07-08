@@ -23,6 +23,6 @@ Optional Company Name: may leave it blank
 
 7. Type openssl.exe x509 -req -days 365 -in localhost.csr -signkey localhost.key -out localhost.crt 
 
-```
+
 << You will find your .crt file at following path: C:-> OpenSSL:-> bin >>
-```
+
